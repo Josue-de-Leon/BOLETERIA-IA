@@ -1,10 +1,11 @@
 import React from 'react';
-import Home from './view/Home';
+// import Home from './view/Home';
+import Login from './view/Login';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Login />
     </div>
   );
 }

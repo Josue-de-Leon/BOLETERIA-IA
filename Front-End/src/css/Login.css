@@ -1,16 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-html, body {
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 .v3_5 {
   display: flex;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 .v3_6 {
   width: 1800px;
@@ -18,38 +9,27 @@ html, body {
 }
   
 .v4_9 {
-  min-width: 100%px;
-  height: 100%;
-  background: url("../../public/img/v4_9.png");
-  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: url('../../public/img/v4_9.png') no-repeat center center;
   background-size: cover;
-  opacity: 1;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
 }
-  
+
 .v4_30 {
-  width: 450px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 660px;
-  left: 166px;
-  font-family: Segoe UI Historic;
-  font-weight: Regular;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
+  color: white;
+  text-align: center;
+  margin: 0;
 }
-  
+
 .v4_31 {
-  width: 337px;
-  color: rgba(255,255,255,0.5);
-  position: absolute;
-  top: 680px;
-  left: 223px;
-  font-family: Segoe UI Historic;
-  font-weight: Regular;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
+  color: rgb(184, 180, 180);
+  text-align: center;
+  margin: 0;
 }
   
 .v4_11 {
@@ -61,7 +41,6 @@ html, body {
   padding-right: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
-  background: rgba(22,25,28,1);
 }
   
 .v4_10 {
@@ -72,7 +51,7 @@ html, body {
   right: -50px;
   font-size: 32px;
   opacity: 1;
-  text-align: right;
+  text-align: center;
   margin-bottom: 80px;
 }
   
@@ -107,8 +86,7 @@ html, body {
   text-align: center;
   justify-content: center;
   place-items: center;
-  background-color: #1E2126;
-  color: #000000;
+  background-color: #e8eaf7;
   font-size: 25px;
 }
   
@@ -119,13 +97,13 @@ html, body {
   margin-left: 5px;
   outline: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 0.3em;
-  background: #1E2126;
+  background: transparent;
 }
   
 .v4_20 i{
-  color: white;
+  color: rgb(0, 0, 0);
 }
   
 .v4_22 {
@@ -151,7 +129,7 @@ html, body {
 .v4_27 {
   width: 100%;
   height: 50px;
-  background: #3639FC;
+  background: #554e85;
   opacity: 1;
   border-radius: 5px;
   border: none;
@@ -159,7 +137,10 @@ html, body {
   color: white;
   font-size: 20px;
 }
-  
+
+.v4_27:hover{
+  background: #695ea4;
+}
   
 @media screen and (max-width: 992px) {
   .v3_6{
