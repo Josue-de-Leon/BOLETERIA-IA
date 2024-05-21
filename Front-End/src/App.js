@@ -1,14 +1,20 @@
 import React from 'react';
 // import Home from './view/Home';
+import { Routes, Route } from 'react-router-dom';
 import Login from './view/Login';
 import Index from './view/Index';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Index />} />
+        {/* Agrega aquí las rutas adicionales que necesites */}
+      </Routes>
+      
       {/* <Home /> */}
-      <Index />
+      
     </div>
   );
 }
