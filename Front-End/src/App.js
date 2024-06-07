@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/chatbot" element={<Index />} />
         {/* Agrega aquí las rutas adicionales que necesites */}
       </Routes>
       
