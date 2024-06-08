@@ -45,7 +45,7 @@ function Chat() {
 
 
     const HistorialAngente = () => {
-        fetch('http://localhost:2500/Historial')
+        fetch('http://localhost:2501/Historial')
             .then(res => res.json())
             .then((respuesta) => {
                 const preguntasArr = respuesta.map(item => item.Pregunta);
@@ -57,7 +57,7 @@ function Chat() {
     };
 
     const AgregarHistorial = (Pregunta, RespuestaIA) => {
-        fetch('http://localhost:2500/NuevoHistorial', {
+        fetch('http://localhost:2501/NuevoHistorial', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
