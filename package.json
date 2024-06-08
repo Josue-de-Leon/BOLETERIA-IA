@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd back-end && npm run dev",
+    "server": "cd back-end && npm run dev && npm run IA",
     "client": "cd Front-End && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,6 +1,7 @@
 const express = require('express');
 const { body, validationResult } = require('express-validator');
 const consulta = require('../BD/queries');
+
 const router = express.Router();
 
 router.post('/login', [
@@ -34,5 +35,31 @@ router.post('/login', [
     res.status(500).json({ success: false, message: 'Error during login process' });
   }
 });
+
+router.get('/Historial',(req,res)=>{
+  consulta.Historial()
+  .then(respuesta=>res.json(respuesta))
+  .catch((e)=>{
+      res.status(500).json({message:"hay un error"});
+  })
+
+})
+
+router.post('/NuevoHistorial',(req,res)=>{
+  const Pregunta=req.body.Pregunta;
+  const RespuestaIA=req.body.RespuestaIA;
+  consulta.InsertarHistroial(Pregunta,RespuestaIA)
+  .then(respuesta=>{
+      if(respuesta){
+          res.status(200).json({message:"Historial guardado"});
+      }else{
+          res.status(400).json({message:"hay un error"});
+      }
+  })
+  .catch((e)=>{
+      res.status(500).json({message:"hay un error"});
+  })
+});
+
 
 module.exports = router;

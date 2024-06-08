@@ -54,7 +54,7 @@ export const useLoginLogic = () => {
         try {
             const result = await loginUser(trimmedEmail, trimmedPassword);
             if (result.success) {
-                navigate('/dashboard');
+                navigate('/chatbot');
             } else {
                 console.error('Login failed: Invalid credentials');
                 setErrorMessage(result.message);
