@@ -39,13 +39,13 @@ export const useLoginLogic = () => {
         }
 
         // Validar contraseña
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#])[A-Za-z\d#]{8,}$/;
         if (!passwordRegex.test(trimmedPassword)) {
-            setErrorMessage('La contraseña debe tener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y un carácter especial.');
+            setErrorMessage('La contraseña debe tener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y el carácter especial #.');
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'La contraseña debe tener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y un carácter especial.'
+                text: 'La contraseña debe tener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y el carácter especial #.'
             });
             return;
         }

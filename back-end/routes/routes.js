@@ -6,11 +6,12 @@ const router = express.Router();
 
 router.post('/login', [
   body('username').isEmail().withMessage('Debe ser un correo electrónico válido'),
-  body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres')
+  body('password')
+    .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
     .custom(value => {
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#])[A-Za-z\d#]{8,}$/;
       if (!passwordRegex.test(value)) {
-        throw new Error('La contraseña debe tener al menos una mayúscula, un número, un carácter especial y al menos 8 caracteres en total');
+        throw new Error('La contraseña debe tener al menos una mayúscula, una minúscula, un número y el carácter especial #');
       }
       return true;
     })
@@ -21,7 +22,6 @@ router.post('/login', [
   }
 
   const { username, password } = req.body;
-
 
   try {
     const respuesta = await consulta.InicioSesion(username, password);
@@ -35,6 +35,8 @@ router.post('/login', [
     res.status(500).json({ success: false, message: 'Error during login process' });
   }
 });
+
+
 
 router.get('/Historial',(req,res)=>{
   consulta.Historial()
